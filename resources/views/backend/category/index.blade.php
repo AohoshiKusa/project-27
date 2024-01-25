@@ -8,28 +8,31 @@
           <table class="table mt-4">
             <thead class="table-dark">
               <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Count</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>Actions</th>
+                <th>category_id</th>
+                <th>name</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+                <th>action</th>
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
+            @foreach ($category as $Category)
               <tr>
-              <td>1</td>
-              <td>โทรศัพท์มือถือ</td>
-              <td> 3 ชิ้น</td>
-              <td>2022-07-25 12:46:29</td>
-              <td>2022-07-25 12:46:29</td>
+              <td>{{ $category->firstItem() + $loop->index  }}</td>
+              <td>{{ $Category->name }}</td>
+              <td>{{ $Category->created_at }}</td>
+              <td>{{ $Category->updated_at }}</td>
               <td>
-                <a href="{{ route('u.edit') }}"><i class='bx bxs-edit'></i></a>
-                <a href="#"><i class='bx bx-trash'></i></a>
+                <a href="{{ url('admin/category/edit/'.$Category->category_id) }}"><i class='bx bxs-edit'></i></a>
+                <a href="{{ url('admin/category/delete/'.$Category->category_id) }}"><i class='bx bxs-edit'></i></a>
               </td>
               </tr>
+            @endforeach
             </tbody>
           </table>
+          <div class="mt-3 comtainer">
+            {{ $category->links('pagination::bootstrap-5') }}
+          </div>
         </div>
       </div>
     </div>

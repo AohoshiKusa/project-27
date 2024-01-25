@@ -9,26 +9,20 @@
               <tr>
                 <th>No</th>
                 <th>Name</th>
-                <th>Address</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Status</th>
-                <th>Actions</th>
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
+              @foreach ($u as $user)
               <tr>
-              <td>1</td>
-              <td>admin</td>
-              <td>จ.นนทบุรี</td>
-              <td>admin@gmail.com</td>
-              <td>098-888-8888</td>
-              <td>admin</td>
-              <td>
-                <a href="#"><i class='bx bxs-edit'></i></a>
-                <a href="#"><i class='bx bx-trash'></i></a>
+              <td>{{ $user->id }}</td>
+              <td>{{ $user->name }}</td>
+              <td>{{ $user->email }}</td>
+              <td>{{ $user->phone }}</td>
               </td>
               </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

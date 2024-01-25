@@ -39,9 +39,15 @@ Route::get('admin/user/index',[UserController::class, 'index'])->name('u.index')
 // เมนู category
 Route::get('admin/category/index',[CategoryController::class, 'index'])->name('u.category');
 Route::get('admin/category/createform',[CategoryController::class, 'createform'])->name('u.createform');
-Route::get('admin/category/edit',[CategoryController::class, 'edit'])->name('u.edit');
+Route::get('admin/category/edit/{id}',[CategoryController::class, 'edit'])->name('u.edit');
+Route::post('admin/product/insert',[CategoryController::class, 'insert']);
+Route::post('admin/category/update{id}',[CategoryController::class, 'update']);
+Route::post('admin/category/delete{id}',[CategoryController::class, 'delete']);
 
 // เมนู product
 Route::get('admin/product/index',[ProductController::class, 'index'])->name('u.product');
 Route::get('admin/product/productform',[ProductController::class, 'productform'])->name('u.productform');
-Route::get('admin/product/productedit',[ProductController::class, 'productedit'])->name('u.productedit');
+Route::get('admin/product/productedit/{id}',[ProductController::class, 'productedit'])->name('u.productedit');
+Route::post('admin/product/insert',[ProductController::class, 'insert']);
+Route::post('admin/product/update/{id}',[ProductController::class, 'update']);
+Route::get('admin/product/delete/{id}',[ProductController::class, 'delete']);

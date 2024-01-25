@@ -46,6 +46,9 @@
 </head>
 
 <body>
+    <!-- ทำแจ้งเตือนด้วย sweetalert -->
+    @include('sweetalert::alert')
+
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
