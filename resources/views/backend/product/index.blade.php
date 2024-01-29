@@ -10,6 +10,7 @@
               <tr>
                 <th>No</th>
                 <th>Name</th>
+                <th>Category</th>
                 <th>images</th>
                 <th>Price</th>
                 <th>Description</th>
@@ -23,6 +24,7 @@
               <tr>
               <td>{{ $product->firstItem() + $loop->index  }}</td>
               <td>{{ $pro->name }}</td>
+              <td>{{ $pro->category->name }}</td>
               <td>
                 <img src="{{ asset('backend/product/resize/'.$pro->image) }}" width="30%" alt="">
             </td>
